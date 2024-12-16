@@ -26,14 +26,14 @@ if os.path.exists(env_path):
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-af6@v2x&n)weo^m*3&^7fj87nqfe@6dau!hn5$67n#hcs!qo1*'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-ojay97hub-boutiqueado-zv0jxtd01d0.ws.codeinstitute-ide.net',
-    'boutique-ado-walkthrough20.herokuapp.com',
+    'boutique-ado-walkthrough20-f0f8619aacf4.herokuapp.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
